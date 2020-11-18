@@ -17,7 +17,9 @@ void loop() {
   int data = Serial.read();
 
 // if-testi ehdollistaa käskyjen suorituksen
- if(data == 'R' || data == 'r' || data == 'S' || data == 's'){
+if(data == 'R' || data == 'r' || data == 'S' || data == 's'){
+// Lukee r tai s kirjaimen
+   data = -1 ; 
    Serial.println("Vilkuttaa");
     digitalWrite(led1,ledon);
     delay(VIIVE);
@@ -25,19 +27,20 @@ void loop() {
      delay(VIIVE); 
     digitalWrite(led1,ledon);
     delay(VIIVE);
-    digitalWrite(led1,ledon);
+    digitalWrite(led1,ledoff);
      delay(VIIVE);
-    digitalWrite(led1, ledoff); 
+    digitalWrite(led1, ledon); 
     delay(VIIVE);
-    digitalWrite(led1,ledon);
+    digitalWrite(led1,ledoff);
      delay(VIIVE);
-    digitalWrite(led1, ledoff); 
+    digitalWrite(led1, ledon); 
     delay(VIIVE);
-    digitalWrite(led1,ledon);
+    digitalWrite(led1,ledoff);
      delay(VIIVE);
+    digitalWrite(led1, ledon); 
+    delay(VIIVE);
     digitalWrite(led1, ledoff); 
-    data = -1;
- }
+  }
 
 if(data == 10){ // Lukee enterin painaluksen
    data = -1 ;
